@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Closures</title>
+    <script>
+        /*
+        var total = function(arg1, arg2){
+            return function(){
+                return arg1 + arg2
+            }
+        };
+        var closefun = total(5,5);
+
+        console.log( closefun() );// 10
+        */
+
+        function repeat(num){
+            var count = num;
+            return function(message){
+                var result = "";
+                for(var i = 0; i < count; i++){
+                    result += message+" <br/>";
+                }
+                return result
+            }
+        };
+
+window.onload = function(){
+    var rep = repeat(5);
+    document.body.innerHTML += rep(" Did you get it...")
+}
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
